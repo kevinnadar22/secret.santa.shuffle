@@ -1,5 +1,5 @@
 # Use Python slim image for production
-FROM python:3.10.6-slim-buster
+FROM python:3.11-slim
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
