@@ -6,7 +6,6 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 ENV FLASK_APP run.py
 ENV FLASK_ENV production
-ENV PORT 5000
 
 # Create and set working directory
 WORKDIR /app

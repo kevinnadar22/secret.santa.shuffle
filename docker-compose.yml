@@ -4,13 +4,9 @@ services:
   web:
     build: .
     ports:
-      - "8000:8000"
-    environment:
-      - SECRET_KEY=your_secret_key
-      - FLASK_APP=secret_santa_app
-      - FLASK_ENV=production
-      - PYTHONUNBUFFERED=1
-      - WEB_SOCKET_TIMEOUT=60
+      - "${PORT:-8000}:${PORT:-8000}"
+    env_file:
+      - .env
     volumes:
       - .:/app
     restart: always
@@ -18,9 +14,4 @@ services:
       restart_policy:
         condition: on-failure
         max_attempts: 3
-    networks:
-      - app_network
 
-networks:
-  app_network:
-    driver: bridge
